@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sophia Crawford | Social Psychology</title>
+  <meta name="description" content="Sophia Crawford is a Social Psychology Ph.D. student at Penn State studying mindfulness, compassion, and the motivational costs of caring.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #faf8f5;
+      --surface: #ffffff;
+      --text: #22201d;
+      --muted: #6b655d;
+      --line: #e6e1d9;
+      --accent: #3d5a80;
+      --accent-soft: #e8eef5;
+      --max: 860px;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #161514;
+        --surface: #1f1e1c;
+        --text: #ece8e2;
+        --muted: #a39d94;
+        --line: #33302c;
+        --accent: #8fb3d9;
+        --accent-soft: #23303d;
+      }
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font: 17px/1.65 "Inter", system-ui, sans-serif;
+    }
+    a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    a:hover { text-decoration-thickness: 2px; }
+    h1, h2, h3 { font-family: "Fraunces", Georgia, serif; font-weight: 600; line-height: 1.2; }
+
+    /* Navigation */
+    nav {
+      position: sticky; top: 0; z-index: 10;
+      background: color-mix(in srgb, var(--bg) 88%, transparent);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav-inner {
+      max-width: var(--max); margin: 0 auto; padding: 14px 20px;
+      display: flex; justify-content: space-between; align-items: center; gap: 16px;
+    }
+    .nav-name { font-family: "Fraunces", serif; font-weight: 600; font-size: 1.1rem; color: var(--text); text-decoration: none; }
+    .nav-links { display: flex; gap: 20px; flex-wrap: wrap; }
+    .nav-links a { color: var(--muted); text-decoration: none; font-size: .92rem; font-weight: 500; }
+    .nav-links a:hover { color: var(--accent); }
+
+    main { max-width: var(--max); margin: 0 auto; padding: 0 20px; }
+    section { padding: 56px 0; border-bottom: 1px solid var(--line); scroll-margin-top: 60px; }
+    section:last-of-type { border-bottom: none; }
+    h2 { font-size: 1.7rem; margin: 0 0 20px; }
+
+    /* About */
+    .hero { display: grid; grid-template-columns: 200px 1fr; gap: 40px; align-items: start; padding-top: 64px; }
+    .photo {
+      width: 200px; height: 200px; border-radius: 50%; object-fit: cover;
+      background: var(--accent-soft); border: 4px solid var(--surface);
+      box-shadow: 0 4px 20px rgba(0,0,0,.08);
+    }
+    .hero h1 { font-size: 2.6rem; margin: 0 0 6px; }
+    .tagline { color: var(--muted); font-size: 1.05rem; margin: 0 0 20px; }
+    .links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
+    .btn {
+      display: inline-block; padding: 8px 16px; border-radius: 999px;
+      border: 1px solid var(--line); background: var(--surface);
+      color: var(--text); text-decoration: none; font-size: .9rem; font-weight: 500;
+    }
+    .btn:hover { border-color: var(--accent); color: var(--accent); }
+    .btn.primary { background: var(--accent); border-color: var(--accent); color: var(--bg); }
+    .btn.primary:hover { opacity: .9; color: var(--bg); }
+
+    /* Research */
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-top: 24px; }
+    .card { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 20px 22px; }
+    .card h3 { font-size: 1.1rem; margin: 0 0 8px; }
+    .card p { margin: 0; color: var(--muted); font-size: .95rem; }
+
+    /* Publications */
+    h3.sub { font-size: 1.15rem; margin: 32px 0 12px; color: var(--muted); font-family: "Inter", sans-serif; font-weight: 600; text-transform: uppercase; letter-spacing: .06em; font-size: .8rem; }
+    h3.sub:first-of-type { margin-top: 0; }
+    .pubs { list-style: none; padding: 0; margin: 0; }
+    .pubs li { padding: 12px 0 12px 18px; border-left: 2px solid var(--line); margin-bottom: 8px; }
+    .pubs li:hover { border-left-color: var(--accent); }
+    .pubs .me { font-weight: 600; }
+    .pubs em { font-style: italic; }
+
+    /* Contact */
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .contact-grid p { margin: 0 0 6px; }
+    .label { color: var(--muted); font-size: .85rem; text-transform: uppercase; letter-spacing: .06em; font-weight: 600; }
+
+    footer { max-width: var(--max); margin: 0 auto; padding: 32px 20px 48px; color: var(--muted); font-size: .85rem; }
+
+    @media (max-width: 640px) {
+      body { font-size: 16px; }
+      .hero { grid-template-columns: 1fr; gap: 24px; text-align: center; padding-top: 40px; }
+      .photo { width: 160px; height: 160px; margin: 0 auto; }
+      .hero h1 { font-size: 2.1rem; }
+      .links { justify-content: center; }
+      .nav-links { gap: 14px; }
+      .nav-name { display: none; }
+      .contact-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a class="nav-name" href="#about">Sophia Crawford</a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#publications">Publications</a>
+        <a href="#contact">CV &amp; Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ============ ABOUT ============ -->
+    <section id="about" class="hero">
+      <!-- EDIT: upload a square headshot named photo.jpg to the same repository -->
+      <img class="photo" src="photo.jpg" alt="Photo of Sophia Crawford">
+      <div>
+        <h1>Sophia Crawford</h1>
+        <p class="tagline">Ph.D. Student in Social Psychology · Penn State University</p>
+        <p>
+          I'm a first-year doctoral student working with
+          Dr. Daryl Cameron
+          in the Empathy and Moral Psychology Lab at Penn State. I study why people sometimes
+          choose to avoid compassion, and how practices like mindfulness shape the way we
+          weigh the costs and rewards of caring for others.
+        </p>
+        <p>
+          Before Penn State, I completed my undergraduate degree at Radford University, where
+          I was a research assistant in the SAP Lab with Dr. Daniel Berry, studying empathy,
+          compassion, intergroup relations, and mindfulness interventions. I also served as a
+          Crisis Intervention Intern at the Women's Resource Center.
+        </p>
+        <div class="links">
+          <a class="btn primary" href="cv.pdf" target="_blank" rel="noopener">Download CV</a>
+          <!-- EDIT: replace with your email -->
+          <a class="btn" href="mailto:your-email@psu.edu">Email</a>
+          <!-- EDIT: add your Google Scholar / OSF / LinkedIn links, or delete the ones you don't use -->
+          <a class="btn" href="https://scholar.google.com/" target="_blank" rel="noopener">Google Scholar</a>
+          <a class="btn" href="https://osf.io/" target="_blank" rel="noopener">OSF</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ RESEARCH ============ -->
+    <section id="research">
+      <h2>Research</h2>
+      <p>
+        Compassion is often treated as an automatic, unlimited response, but it takes effort, and
+        people frequently choose to avoid it. My research examines the <strong>motivational costs
+        of caring</strong>: when and why people approach or avoid compassion, and what that means
+        for their own well-being over time.
+      </p>
+      <div class="cards">
+        <div class="card">
+          <h3>Mindfulness &amp; Compassion Avoidance</h3>
+          <p>Does mindfulness heighten awareness of the effort compassion requires, and lead people to step back from it? I test this with choice-based paradigms like the Empathy Selection Task.</p>
+        </div>
+        <div class="card">
+          <h3>Compassion Fatigue</h3>
+          <p>Using daily diary methods, I examine whether disengaging from compassion protects people from compassion fatigue or feeds into it.</p>
+        </div>
+        <div class="card">
+          <h3>Moral Valuation of Compassion</h3>
+          <p>How much people value compassion morally may shape whether they push through its costs, including toward disliked or outgroup targets.</p>
+        </div>
+        <div class="card">
+          <h3>Self-Compassion</h3>
+          <p>An emerging interest: how turning compassion inward relates to mindfulness and to caring for others.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PUBLICATIONS ============ -->
+    <section id="publications">
+      <h2>Publications &amp; Presentations</h2>
+
+      <h3 class="sub">Theses</h3>
+      <ul class="pubs">
+        <!-- EDIT: fill in the year -->
+        <li>
+          <span class="me">Crawford, S.</span> (YEAR). <em>The motivational costs of caring: How brief
+          mindfulness practices influence compassion engagement and avoidance</em> [Honors thesis,
+          Radford University]. Advisor: Dr. Daniel R. Berry.
+        </li>
+      </ul>
+
+      <h3 class="sub">Conference Presentations</h3>
+      <ul class="pubs">
+        <!-- EDIT: add posters/talks in APA format. Copy one <li>...</li> block per entry. Example:
+        <li>
+          <span class="me">Crawford, S.</span>, &amp; Berry, D. R. (2025, March). <em>Title of your poster</em>
+          [Poster presentation]. Conference Name, City, State.
+        </li>
+        -->
+        <li>
+          <span class="me">Crawford, S.</span> (YEAR, Month). <em>Title of presentation</em> [Poster presentation]. Conference Name, City, State.
+        </li>
+      </ul>
+    </section>
+
+    <!-- ============ CV & CONTACT ============ -->
+    <section id="contact">
+      <h2>CV &amp; Contact</h2>
+      <p>
+        My full CV is available <a href="cv.pdf" target="_blank" rel="noopener">here (PDF)</a>.
+        I'm always happy to talk about compassion, mindfulness, and research collaborations.
+      </p>
+      <div class="contact-grid">
+        <div>
+          <p class="label">Email</p>
+          <!-- EDIT: replace with your email -->
+          <p><a href="mailto:your-email@psu.edu">your-email@psu.edu</a></p>
+        </div>
+        <div>
+          <p class="label">Department</p>
+          <p>Department of Psychology<br>The Pennsylvania State University<br>University Park, PA</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    © 2026 Sophia Crawford
+  </footer>
+
+</body>
+</html>
