@@ -45,7 +45,6 @@
     a:hover { text-decoration-thickness: 2px; }
     h1, h2, h3 { font-family: "Fraunces", Georgia, serif; font-weight: 600; line-height: 1.2; }
 
-    /* Navigation */
     nav {
       position: sticky; top: 0; z-index: 10;
       background: color-mix(in srgb, var(--bg) 88%, transparent);
@@ -66,7 +65,6 @@
     section:last-of-type { border-bottom: none; }
     h2 { font-size: 1.7rem; margin: 0 0 20px; }
 
-    /* About */
     .hero { display: grid; grid-template-columns: 200px 1fr; gap: 40px; align-items: start; padding-top: 64px; }
     .photo {
       width: 200px; height: 200px; border-radius: 50%; object-fit: cover;
@@ -85,108 +83,17 @@
     .btn.primary { background: var(--accent); border-color: var(--accent); color: var(--bg); }
     .btn.primary:hover { opacity: .9; color: var(--bg); }
 
-    /* Research */
     .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-top: 24px; }
     .card { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 20px 22px; }
     .card h3 { font-size: 1.1rem; margin: 0 0 8px; }
     .card p { margin: 0; color: var(--muted); font-size: .95rem; }
 
-      <!-- ============ PUBLICATIONS ============ -->
-    <section id="publications">
-      <h2>Publications &amp; Presentations</h2>
+    h3.sub { margin: 36px 0 12px; color: var(--muted); font-family: "Inter", sans-serif; font-weight: 600; text-transform: uppercase; letter-spacing: .06em; font-size: .8rem; }
+    .pubs { list-style: none; padding: 0; margin: 0; }
+    .pubs li { padding: 10px 0 10px 18px; border-left: 2px solid var(--line); margin-bottom: 8px; }
+    .pubs li:hover { border-left-color: var(--accent); }
+    .pubs .me { font-weight: 600; }
 
-      <h3 class="sub">Manuscripts Under Review</h3>
-      <ul class="pubs">
-        <li>
-          <span class="me">Crawford, S. G.</span>, &amp; Berry, D. R. (submitted for review). Brief mindfulness instruction increases prosocial emotion arousal and decreases prosocial situation selection.
-        </li>
-        <li>
-          Lilley, K. M., Handy, J. L., Morfield, G., <span class="me">Crawford, S. G.</span>, Tasulis, V., &amp; Berry, D. R. (submitted). Adversity severity buffers prosocial situation selection decline. <em>Affective Science</em>.
-        </li>
-      </ul>
-
-      <h3 class="sub">Manuscripts in Preparation</h3>
-      <ul class="pubs">
-        <li>
-          Kinsky, G. J., Lilley, K. M., Heusinger, N. E., <span class="me">Crawford, S. G.</span>, Behler, A. M. C., &amp; Berry, D. R. (in preparation). Is intergroup empathetic situation selection lower for social outgroups?
-        </li>
-      </ul>
-
-      <h3 class="sub">Theses</h3>
-      <ul class="pubs">
-        <li>
-          <span class="me">Crawford, S. G.</span> (2026). <em>The motivational costs of caring: How brief mindfulness practices influence compassion engagement and avoidance</em> [Honors thesis, Radford University]. Advisor: Dr. Daniel R. Berry.
-        </li>
-      </ul>
-
-      <h3 class="sub">Talks</h3>
-      <ul class="pubs">
-        <li>
-          <span class="me">Crawford, S. G.</span>, &amp; Berry, D. R. (2026, April). <em>The choice to care: Compassion motivation and avoidance following brief mindfulness practices</em> [Talk]. Honors Capstone Showcase, Radford, VA.
-        </li>
-        <li>
-          <span class="me">Crawford, S. G.</span>, Handy, J., &amp; Berry, D. R. (2024, December). <em>How mindfulness impacts compassion regulation</em> [Talk]. 6th Annual Winter Creative Activities and Research Days, Radford, VA.
-        </li>
-        <li>
-          <span class="me">Crawford, S. G.</span>, &amp; Berry, D. R. (2024, October). <em>Mindfulness and compassion regulation</em> [Flash talk]. 12th Annual Summer Research Celebration, Radford, VA.
-        </li>
-        <li>
-          <span class="me">Crawford, S. G.</span>, &amp; Berry, D. R. (2024, April). <em>Does trait mindfulness predict prosocial emotional regulation?</em> [Flash talk]. Student Engagement Forum, Radford, VA.
-        </li>
-      </ul>
-
-      <h3 class="sub">Invited Presentations</h3>
-      <ul class="pubs">
-        <li>
-          <span class="me">Crawford, S. G.</span>, Benz, H., &amp; Forti, M. (2026, March). <em>Compassion in action: Serving as a crisis intervention intern at the Women's Resource Center</em>. CHBS Advisory Board Meeting, Radford University.
-        </li>
-        <li>
-          <span class="me">Crawford, S. G.</span>, &amp; Berry, D. R. (2024, October). <em>STARS funding</em>. CHBS Advisory Board Meeting, Radford University.
-        </li>
-      </ul>
-
-      <h3 class="sub">Posters</h3>
-      <ul class="pubs">
-        <li>
-          <span class="me">Crawford, S. G.</span>, &amp; Berry, D. R. (2027, February). <em>To care or not to care: How brief mindfulness practices influence compassion engagement and avoidance</em> [Poster accepted]. Annual Convention of the Society for Personality and Social Psychology, Philadelphia, PA.
-        </li>
-        <li>
-          <span class="me">Crawford, S. G.</span>, Benz, H., &amp; Forti, M. (2026, April). <em>From training to transformation: Growth through crisis hotline advocacy at the Women's Resource Center</em> [Poster]. Student Engagement Forum, Radford University, Radford, VA.
-        </li>
-        <li>
-          <span class="me">Crawford, S. G.</span>, Benz, H., &amp; Forti, M. (2025, December). <em>Compassion in action: Serving as a crisis intervention intern at the Women's Resource Center</em> [Poster]. Winter Creative Activities and Research Days, Radford, VA.
-        </li>
-        <li>
-          Morris, E., Kinsky, G. J., Beach, N., <span class="me">Crawford, S. G.</span>, Behler, A. M. C., &amp; Berry, D. R. (2025, April). <em>How group affiliation affects empathic emotion regulation</em> [Poster]. Student Engagement Forum, Radford, VA.
-        </li>
-        <li>
-          <span class="me">Crawford, S. G.</span>, Crawford, J. M., Gillette, E., Moreno, I. H., Brown, H. M., &amp; Barfield, S. (2025, April). <em>From trends to taste: An exploration of social media and its influence on eating habits among college students</em> [Poster]. Student Engagement Forum, Radford University, Radford, VA.
-        </li>
-        <li>
-          <span class="me">Crawford, S. G.</span>, Showalter, S. E., &amp; Tan, T. K. (2025, April). <em>AI companions: Friend or foe?</em> [Poster]. Wicked Festival, Radford University, Radford, VA. <strong>Bronze Winner, Distinguished Research Award.</strong>
-        </li>
-        <li>
-          <span class="me">Crawford, S. G.</span>, Beach, N., &amp; Berry, D. R. (2025, April). <em>Does mindfulness predict prosocial emotion regulation?</em> [Poster]. 71st Annual Meeting of the Southeastern Psychological Association, Atlanta, GA.
-        </li>
-        <li>
-          <span class="me">Crawford, S. G.</span>, Heusinger, N. E., Lilley, K. M., &amp; Berry, D. R. (2024, March). <em>How does trait mindfulness impact intergroup empathy selection and avoidance?</em> [Poster]. Annual Meeting of the Society for Affective Science, New Orleans, LA.
-        </li>
-        <li>
-          Heusinger, N. E., <span class="me">Crawford, S. G.</span>, Lilley, K. M., &amp; Berry, D. R. (2024, March). <em>Will people choose to avoid empathy in interracial contexts?</em> [Poster]. Annual Meeting of the Society for Affective Science, New Orleans, LA.
-        </li>
-        <li>
-          Lilley, K. M., <span class="me">Crawford, S. G.</span>, Heusinger, N. E., &amp; Berry, D. R. (2024, March). <em>Does prior experience with adversity close the intergroup empathy gap?</em> [Poster]. Annual Meeting of the Society for Affective Science, New Orleans, LA.
-        </li>
-        <li>
-          Lilley, K. M., Heusinger, N. E., <span class="me">Crawford, S. G.</span>, &amp; Berry, D. R. (2024, February). <em>Does severity of adversity predict selecting into empathetic situations?</em> [Poster]. Annual Convention of the Society for Personality and Social Psychology, San Diego, CA.
-        </li>
-        <li>
-          <span class="me">Crawford, S. G.</span>, &amp; Berry, D. R. (2023, December). <em>Individual difference factors that reduce the intergroup &ldquo;empathy gap&rdquo;</em> [Poster]. Winter Creative Activities and Research Days, Radford, VA.
-        </li>
-      </ul>
-    </section>
-    
-    /* Contact */
     .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
     .contact-grid p { margin: 0 0 6px; }
     .label { color: var(--muted); font-size: .85rem; text-transform: uppercase; letter-spacing: .06em; font-weight: 600; }
@@ -223,14 +130,12 @@
 
     <!-- ============ ABOUT ============ -->
     <section id="about" class="hero">
-      <!-- EDIT: upload a square headshot named photo.jpg to the same repository -->
       <img class="photo" src="IMG_3173.jpeg" alt="Photo of Sophia Crawford">
       <div>
         <h1>Sophia Crawford</h1>
         <p class="tagline">Ph.D. Student in Social Psychology · Penn State University</p>
         <p>
-          I'm a first-year doctoral student working with
-          Dr. Daryl Cameron
+          I'm a first-year doctoral student working with Dr. Daryl Cameron
           in the Empathy and Moral Psychology Lab at Penn State. I study why people sometimes
           choose to avoid compassion, and how practices like mindfulness shape the way we
           weigh the costs and rewards of caring for others.
@@ -238,15 +143,11 @@
         <p>
           Before Penn State, I completed my undergraduate degree at Radford University, where
           I was a research assistant in the SAP Lab with Dr. Daniel Berry, studying empathy,
-          compassion, intergroup relations, and mindfulness interventions. 
+          compassion, intergroup relations, and mindfulness interventions.
         </p>
         <div class="links">
           <a class="btn primary" href="cv.pdf" target="_blank" rel="noopener">Download CV</a>
-          <!-- EDIT: replace with your email -->
-          <a class="btn" href="mailto:your-email@psu.edu">Email</a>
-          <!-- EDIT: add your Google Scholar / OSF / LinkedIn links, or delete the ones you don't use -->
-          <a class="btn" href="https://scholar.google.com/" target="_blank" rel="noopener">Google Scholar</a>
-          <a class="btn" href="https://osf.io/" target="_blank" rel="noopener">OSF</a>
+          <a class="btn" href="mailto:sgc5489@psu.edu">Email</a>
         </div>
       </div>
     </section>
@@ -284,27 +185,50 @@
     <section id="publications">
       <h2>Publications &amp; Presentations</h2>
 
-      <h3 class="sub">Theses</h3>
+      <h3 class="sub">Manuscripts Under Review</h3>
       <ul class="pubs">
-        <!-- EDIT: fill in the year -->
-        <li>
-          <span class="me">Crawford, S.</span> (YEAR). <em>The motivational costs of caring: How brief
-          mindfulness practices influence compassion engagement and avoidance</em> [Honors thesis,
-          Radford University]. Advisor: Dr. Daniel R. Berry.
-        </li>
+        <li><span class="me">Crawford, S. G.</span>, &amp; Berry, D. R. (submitted for review). Brief mindfulness instruction increases prosocial emotion arousal and decreases prosocial situation selection.</li>
+        <li>Lilley, K. M., Handy, J. L., Morfield, G., <span class="me">Crawford, S. G.</span>, Tasulis, V., &amp; Berry, D. R. (submitted). Adversity severity buffers prosocial situation selection decline. <em>Affective Science</em>.</li>
       </ul>
 
-      <h3 class="sub">Conference Presentations</h3>
+      <h3 class="sub">Manuscripts in Preparation</h3>
       <ul class="pubs">
-        <!-- EDIT: add posters/talks in APA format. Copy one <li>...</li> block per entry. Example:
-        <li>
-          <span class="me">Crawford, S.</span>, &amp; Berry, D. R. (2025, March). <em>Title of your poster</em>
-          [Poster presentation]. Conference Name, City, State.
-        </li>
-        -->
-        <li>
-          <span class="me">Crawford, S.</span> (YEAR, Month). <em>Title of presentation</em> [Poster presentation]. Conference Name, City, State.
-        </li>
+        <li>Kinsky, G. J., Lilley, K. M., Heusinger, N. E., <span class="me">Crawford, S. G.</span>, Behler, A. M. C., &amp; Berry, D. R. (in preparation). Is intergroup empathetic situation selection lower for social outgroups?</li>
+      </ul>
+
+      <h3 class="sub">Theses</h3>
+      <ul class="pubs">
+        <li><span class="me">Crawford, S. G.</span> (2026). <em>The motivational costs of caring: How brief mindfulness practices influence compassion engagement and avoidance</em> [Honors thesis, Radford University]. Advisor: Dr. Daniel R. Berry.</li>
+      </ul>
+
+      <h3 class="sub">Talks</h3>
+      <ul class="pubs">
+        <li><span class="me">Crawford, S. G.</span>, &amp; Berry, D. R. (2026, April). <em>The choice to care: Compassion motivation and avoidance following brief mindfulness practices</em> [Talk]. Honors Capstone Showcase, Radford, VA.</li>
+        <li><span class="me">Crawford, S. G.</span>, Handy, J., &amp; Berry, D. R. (2024, December). <em>How mindfulness impacts compassion regulation</em> [Talk]. 6th Annual Winter Creative Activities and Research Days, Radford, VA.</li>
+        <li><span class="me">Crawford, S. G.</span>, &amp; Berry, D. R. (2024, October). <em>Mindfulness and compassion regulation</em> [Flash talk]. 12th Annual Summer Research Celebration, Radford, VA.</li>
+        <li><span class="me">Crawford, S. G.</span>, &amp; Berry, D. R. (2024, April). <em>Does trait mindfulness predict prosocial emotional regulation?</em> [Flash talk]. Student Engagement Forum, Radford, VA.</li>
+      </ul>
+
+      <h3 class="sub">Invited Presentations</h3>
+      <ul class="pubs">
+        <li><span class="me">Crawford, S. G.</span>, Benz, H., &amp; Forti, M. (2026, March). <em>Compassion in action: Serving as a crisis intervention intern at the Women's Resource Center</em>. CHBS Advisory Board Meeting, Radford University.</li>
+        <li><span class="me">Crawford, S. G.</span>, &amp; Berry, D. R. (2024, October). <em>STARS funding</em>. CHBS Advisory Board Meeting, Radford University.</li>
+      </ul>
+
+      <h3 class="sub">Posters</h3>
+      <ul class="pubs">
+        <li><span class="me">Crawford, S. G.</span>, &amp; Berry, D. R. (2027, February). <em>To care or not to care: How brief mindfulness practices influence compassion engagement and avoidance</em> [Poster accepted]. Annual Convention of the Society for Personality and Social Psychology, Philadelphia, PA.</li>
+        <li><span class="me">Crawford, S. G.</span>, Benz, H., &amp; Forti, M. (2026, April). <em>From training to transformation: Growth through crisis hotline advocacy at the Women's Resource Center</em> [Poster]. Student Engagement Forum, Radford University, Radford, VA.</li>
+        <li><span class="me">Crawford, S. G.</span>, Benz, H., &amp; Forti, M. (2025, December). <em>Compassion in action: Serving as a crisis intervention intern at the Women's Resource Center</em> [Poster]. Winter Creative Activities and Research Days, Radford, VA.</li>
+        <li>Morris, E., Kinsky, G. J., Beach, N., <span class="me">Crawford, S. G.</span>, Behler, A. M. C., &amp; Berry, D. R. (2025, April). <em>How group affiliation affects empathic emotion regulation</em> [Poster]. Student Engagement Forum, Radford, VA.</li>
+        <li><span class="me">Crawford, S. G.</span>, Crawford, J. M., Gillette, E., Moreno, I. H., Brown, H. M., &amp; Barfield, S. (2025, April). <em>From trends to taste: An exploration of social media and its influence on eating habits among college students</em> [Poster]. Student Engagement Forum, Radford University, Radford, VA.</li>
+        <li><span class="me">Crawford, S. G.</span>, Showalter, S. E., &amp; Tan, T. K. (2025, April). <em>AI companions: Friend or foe?</em> [Poster]. Wicked Festival, Radford University, Radford, VA. <strong>Bronze Winner, Distinguished Research Award.</strong></li>
+        <li><span class="me">Crawford, S. G.</span>, Beach, N., &amp; Berry, D. R. (2025, April). <em>Does mindfulness predict prosocial emotion regulation?</em> [Poster]. 71st Annual Meeting of the Southeastern Psychological Association, Atlanta, GA.</li>
+        <li><span class="me">Crawford, S. G.</span>, Heusinger, N. E., Lilley, K. M., &amp; Berry, D. R. (2024, March). <em>How does trait mindfulness impact intergroup empathy selection and avoidance?</em> [Poster]. Annual Meeting of the Society for Affective Science, New Orleans, LA.</li>
+        <li>Heusinger, N. E., <span class="me">Crawford, S. G.</span>, Lilley, K. M., &amp; Berry, D. R. (2024, March). <em>Will people choose to avoid empathy in interracial contexts?</em> [Poster]. Annual Meeting of the Society for Affective Science, New Orleans, LA.</li>
+        <li>Lilley, K. M., <span class="me">Crawford, S. G.</span>, Heusinger, N. E., &amp; Berry, D. R. (2024, March). <em>Does prior experience with adversity close the intergroup empathy gap?</em> [Poster]. Annual Meeting of the Society for Affective Science, New Orleans, LA.</li>
+        <li>Lilley, K. M., Heusinger, N. E., <span class="me">Crawford, S. G.</span>, &amp; Berry, D. R. (2024, February). <em>Does severity of adversity predict selecting into empathetic situations?</em> [Poster]. Annual Convention of the Society for Personality and Social Psychology, San Diego, CA.</li>
+        <li><span class="me">Crawford, S. G.</span>, &amp; Berry, D. R. (2023, December). <em>Individual difference factors that reduce the intergroup &ldquo;empathy gap&rdquo;</em> [Poster]. Winter Creative Activities and Research Days, Radford, VA.</li>
       </ul>
     </section>
 
@@ -318,8 +242,7 @@
       <div class="contact-grid">
         <div>
           <p class="label">Email</p>
-          <!-- EDIT: replace with your email -->
-          <p><a href="mailto:your-email@psu.edu">your-email@psu.edu</a></p>
+          <p><a href="mailto:sgc5489@psu.edu">sgc5489@psu.edu</a></p>
         </div>
         <div>
           <p class="label">Department</p>
