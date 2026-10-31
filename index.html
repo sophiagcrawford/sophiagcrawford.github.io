@@ -8,28 +8,28 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --bg: #faf8f5;
-      --surface: #ffffff;
-      --text: #22201d;
-      --muted: #6b655d;
-      --line: #e6e1d9;
-      --accent: #3d5a80;
-      --accent-soft: #e8eef5;
-      --max: 860px;
+      --bg: #ffffff;
+      --bar: #b9cfe2;
+      --bar-text: #1f2a36;
+      --text: #22272e;
+      --muted: #5c6670;
+      --line: #e3e8ee;
+      --link: #47698c;
+      --max: 1120px;
     }
     @media (prefers-color-scheme: dark) {
       :root {
-        --bg: #161514;
-        --surface: #1f1e1c;
-        --text: #ece8e2;
-        --muted: #a39d94;
-        --line: #33302c;
-        --accent: #8fb3d9;
-        --accent-soft: #23303d;
+        --bg: #15181c;
+        --bar: #2a3a4a;
+        --bar-text: #e6edf3;
+        --text: #e3e6ea;
+        --muted: #a0a9b3;
+        --line: #2b3138;
+        --link: #9cc0e4;
       }
     }
 
@@ -39,238 +39,236 @@
       margin: 0;
       background: var(--bg);
       color: var(--text);
-      font: 17px/1.65 "Inter", system-ui, sans-serif;
+      font: 19px/1.65 "Alegreya Sans", "Helvetica Neue", Arial, sans-serif;
     }
-    a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    a { color: var(--link); text-underline-offset: 3px; }
     a:hover { text-decoration-thickness: 2px; }
-    h1, h2, h3 { font-family: "Fraunces", Georgia, serif; font-weight: 600; line-height: 1.2; }
+    h1, h2, h3 { line-height: 1.2; font-weight: 700; }
 
-    nav {
+    .topbar {
       position: sticky; top: 0; z-index: 10;
-      background: color-mix(in srgb, var(--bg) 88%, transparent);
-      backdrop-filter: blur(8px);
-      border-bottom: 1px solid var(--line);
+      background: var(--bar);
+      color: var(--bar-text);
     }
-    .nav-inner {
-      max-width: var(--max); margin: 0 auto; padding: 14px 20px;
-      display: flex; justify-content: space-between; align-items: center; gap: 16px;
+    .topbar-inner {
+      max-width: var(--max); margin: 0 auto; padding: 18px 20px;
+      display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap;
     }
-    .nav-name { font-family: "Fraunces", serif; font-weight: 600; font-size: 1.1rem; color: var(--text); text-decoration: none; }
-    .nav-links { display: flex; gap: 20px; flex-wrap: wrap; }
-    .nav-links a { color: var(--muted); text-decoration: none; font-size: .92rem; font-weight: 500; }
-    .nav-links a:hover { color: var(--accent); }
+    .site-name { font-size: 1.45rem; font-weight: 700; color: var(--bar-text); text-decoration: none; }
+    .topbar nav { display: flex; gap: 26px; flex-wrap: wrap; }
+    .topbar nav a { color: var(--bar-text); text-decoration: none; font-size: 1.05rem; }
+    .topbar nav a:hover { text-decoration: underline; }
 
-    main { max-width: var(--max); margin: 0 auto; padding: 0 20px; }
-    section { padding: 56px 0; border-bottom: 1px solid var(--line); scroll-margin-top: 60px; }
-    section:last-of-type { border-bottom: none; }
-    h2 { font-size: 1.7rem; margin: 0 0 20px; }
+    .layout {
+      max-width: var(--max); margin: 0 auto; padding: 36px 20px 60px;
+      display: grid; grid-template-columns: 280px 1fr; gap: 56px;
+    }
 
-    .hero { display: grid; grid-template-columns: 200px 1fr; gap: 40px; align-items: start; padding-top: 64px; }
+    .sidebar { position: sticky; top: 100px; align-self: start; }
     .photo {
-      width: 200px; height: 200px; border-radius: 50%; object-fit: cover;
-      background: var(--accent-soft); border: 4px solid var(--surface);
-      box-shadow: 0 4px 20px rgba(0,0,0,.08);
+      width: 170px; height: 170px; border-radius: 50%; object-fit: cover;
+      display: block; margin-bottom: 18px; border: 3px solid var(--line);
     }
-    .hero h1 { font-size: 2.6rem; margin: 0 0 6px; }
-    .tagline { color: var(--muted); font-size: 1.05rem; margin: 0 0 20px; }
-    .links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
-    .btn {
-      display: inline-block; padding: 8px 16px; border-radius: 999px;
-      border: 1px solid var(--line); background: var(--surface);
-      color: var(--text); text-decoration: none; font-size: .9rem; font-weight: 500;
-    }
-    .btn:hover { border-color: var(--accent); color: var(--accent); }
-    .btn.primary { background: var(--accent); border-color: var(--accent); color: var(--bg); }
-    .btn.primary:hover { opacity: .9; color: var(--bg); }
+    .sidebar h2 { font-size: 1.7rem; margin: 0 0 4px; }
+    .sidebar .title { margin: 0 0 22px; color: var(--muted); }
+    .sidebar p { margin: 0 0 18px; }
+    .side-links { list-style: none; padding: 0; margin: 24px 0 0; }
+    .side-links li { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+    .side-links svg { width: 22px; height: 22px; fill: var(--muted); flex-shrink: 0; }
 
-    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-top: 24px; }
-    .card { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 20px 22px; }
-    .card h3 { font-size: 1.1rem; margin: 0 0 8px; }
-    .card p { margin: 0; color: var(--muted); font-size: .95rem; }
+    main section { padding-bottom: 36px; margin-bottom: 36px; border-bottom: 1px solid var(--line); scroll-margin-top: 90px; }
+    main section:last-of-type { border-bottom: none; }
+    main h1 { font-size: 2.1rem; margin: 0 0 22px; }
+    main h2 { font-size: 1.75rem; margin: 0 0 18px; }
+    .lead { font-weight: 700; font-size: 1.1rem; }
+    .tagline { font-style: italic; }
 
-    h3.sub { margin: 36px 0 12px; color: var(--muted); font-family: "Inter", sans-serif; font-weight: 600; text-transform: uppercase; letter-spacing: .06em; font-size: .8rem; }
-    .pubs { list-style: none; padding: 0; margin: 0; }
-    .pubs li { padding: 10px 0 10px 18px; border-left: 2px solid var(--line); margin-bottom: 8px; }
-    .pubs li:hover { border-left-color: var(--accent); }
-    .pubs .me { font-weight: 600; }
+    .topic { margin-bottom: 18px; }
+    .topic h3 { font-size: 1.15rem; margin: 0 0 4px; }
+    .topic p { margin: 0; }
 
-    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
-    .contact-grid p { margin: 0 0 6px; }
-    .label { color: var(--muted); font-size: .85rem; text-transform: uppercase; letter-spacing: .06em; font-weight: 600; }
+    h3.sub { font-size: 1.15rem; margin: 28px 0 10px; color: var(--muted); }
+    .refs { list-style: none; padding: 0; margin: 0; }
+    .refs li { padding-left: 2em; text-indent: -2em; margin-bottom: 12px; }
+    .me { font-weight: 700; }
+    .award { color: var(--muted); font-style: italic; }
 
-    footer { max-width: var(--max); margin: 0 auto; padding: 32px 20px 48px; color: var(--muted); font-size: .85rem; }
+    .teach { margin-bottom: 18px; }
+    .teach strong { display: block; }
 
-    @media (max-width: 640px) {
-      body { font-size: 16px; }
-      .hero { grid-template-columns: 1fr; gap: 24px; text-align: center; padding-top: 40px; }
-      .photo { width: 160px; height: 160px; margin: 0 auto; }
-      .hero h1 { font-size: 2.1rem; }
-      .links { justify-content: center; }
-      .nav-links { gap: 14px; }
-      .nav-name { display: none; }
-      .contact-grid { grid-template-columns: 1fr; }
+    footer { max-width: var(--max); margin: 0 auto; padding: 0 20px 40px; color: var(--muted); font-size: .9rem; }
+
+    @media (max-width: 800px) {
+      body { font-size: 18px; }
+      .layout { grid-template-columns: 1fr; gap: 32px; padding-top: 28px; }
+      .sidebar { position: static; text-align: center; }
+      .photo { margin: 0 auto 16px; }
+      .side-links { display: inline-block; text-align: left; }
+      .topbar nav { gap: 16px; }
+      .topbar nav a { font-size: .98rem; }
     }
   </style>
 </head>
 <body>
 
-  <nav>
-    <div class="nav-inner">
-      <a class="nav-name" href="#about">Sophia Crawford</a>
-      <div class="nav-links">
-        <a href="#about">About</a>
-          <a href="#research">Research</a>
-          <a href="#publications">Publications</a>
-          <a href="#teaching">Teaching</a>
-          <a href="#contact">CV &amp; Contact</a>      </div>
+  <!-- ============ TOP BAR ============ -->
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="site-name" href="#about">Sophia Crawford</a>
+      <nav>
+        <a href="#about">Home</a>
+        <a href="cv.pdf" target="_blank" rel="noopener">CV</a>
+        <a href="#research">Research</a>
+        <a href="#publications">Publications</a>
+        <a href="#teaching">Teaching</a>
+      </nav>
     </div>
-  </nav>
+  </header>
 
-  <main>
+  <div class="layout">
 
-    <!-- ============ ABOUT ============ -->
-    <section id="about" class="hero">
+    <!-- ============ SIDEBAR ============ -->
+    <aside class="sidebar">
       <img class="photo" src="IMG_3173.jpeg" alt="Photo of Sophia Crawford">
-      <div>
-        <h1>Sophia Crawford</h1>
-        <p class="tagline">Ph.D. Student in Social Psychology · Penn State University</p>
-        <p>
-          I'm a first-year doctoral student working with Dr. Daryl Cameron
-          in the Empathy and Moral Psychology Lab at Penn State. I study why people sometimes
-          choose to avoid compassion, and how practices like mindfulness shape the way we
-          weigh the costs and rewards of caring for others.
-        </p>
-        <p>
-          Before Penn State, I completed my undergraduate degree at Radford University, where
-          I was a research assistant in the SAP Lab with Dr. Daniel Berry, studying empathy,
-          compassion, intergroup relations, and mindfulness interventions.
-        </p>
-        <div class="links">
-          <a class="btn primary" href="cv.pdf" target="_blank" rel="noopener">Download CV</a>
-          <a class="btn" href="mailto:sgc5489@psu.edu">Email</a>
-          <a class="btn" href="https://www.linkedin.com/in/sophie-crawford-68ab0440a/" target="_blank" rel="noopener">LinkedIn</a>
-        </div>        </div>
-    </section>
+      <h2>Sophia Crawford</h2>
+      <p class="title">Ph.D. Student, Social Psychology</p>
+      <p><a href="mailto:sgc5489@psu.edu">sgc5489@psu.edu</a></p>
+      <p>Department of Psychology<br>The Pennsylvania State University</p>
 
-    <!-- ============ RESEARCH ============ -->
-    <section id="research">
-      <h2>Research</h2>
-      <p>
-        Compassion is often treated as an automatic, unlimited response, but it takes effort, and
-        people frequently choose to avoid it. My research examines the <strong>motivational costs
-        of caring</strong>: when and why people approach or avoid compassion, and what that means
-        for their own well-being over time.
-      </p>
-      <div class="cards">
-        <div class="card">
+      <ul class="side-links">
+        <li>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4.2-8 5-8-5V6l8 5 8-5v2.2z"/></svg>
+          <a href="mailto:sgc5489@psu.edu">Email</a>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.850-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.770 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+          <a href="https://www.linkedin.com/in/sophie-crawford-68ab0440a/" target="_blank" rel="noopener">LinkedIn</a>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 1 9l11 6 9-4.9V17h2V9L12 3zM5 13.2v4L12 21l7-3.8v-4L12 17l-7-3.8z"/></svg>
+          <a href="https://emplab.la.psu.edu" target="_blank" rel="noopener">Lab Website</a>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm-1 7V3.5L18.5 9H13zM8 13h8v2H8v-2zm0 4h8v2H8v-2z"/></svg>
+          <a href="cv.pdf" target="_blank" rel="noopener">CV (PDF)</a>
+        </li>
+      </ul>
+    </aside>
+
+    <main>
+
+      <!-- ============ ABOUT ============ -->
+      <section id="about">
+        <h1>Hi, I'm Sophia Crawford.</h1>
+        <p class="lead">I study why people sometimes choose to avoid compassion, and what caring costs us.</p>
+        <p class="tagline">My research examines how practices like mindfulness shape the way we weigh the effort and rewards of caring for others, and what that means for our own well-being over time.</p>
+        <p>
+          I am a first-year Ph.D. student in Social Psychology at The Pennsylvania State University,
+          working with Dr. Daryl Cameron in the
+          <a href="https://emplab.la.psu.edu" target="_blank" rel="noopener">Empathy and Moral Psychology Lab</a>.
+          I received my B.S. in Psychology, summa cum laude with High Honors, from Radford University,
+          where I was a research assistant in the Social and Affective Psychophysiology Lab under the
+          mentorship of Dr. Daniel Berry and completed my honors thesis on how brief mindfulness
+          practices influence compassion engagement and avoidance.
+        </p>
+      </section>
+
+      <!-- ============ RESEARCH ============ -->
+      <section id="research">
+        <h2>Research</h2>
+        <p>
+          Compassion is often treated as an automatic, unlimited response, but it takes effort, and
+          people frequently choose to avoid it. My research examines the motivational costs of caring:
+          when and why people approach or avoid compassion.
+        </p>
+        <div class="topic">
           <h3>Mindfulness &amp; Compassion Avoidance</h3>
           <p>Does mindfulness heighten awareness of the effort compassion requires, and lead people to step back from it? I test this with choice-based paradigms like the Empathy Selection Task.</p>
         </div>
-        <div class="card">
+        <div class="topic">
           <h3>Compassion Fatigue</h3>
           <p>Using daily diary methods, I examine whether disengaging from compassion protects people from compassion fatigue or feeds into it.</p>
         </div>
-        <div class="card">
+        <div class="topic">
           <h3>Moral Valuation of Compassion</h3>
           <p>How much people value compassion morally may shape whether they push through its costs, including toward disliked or outgroup targets.</p>
         </div>
-        <div class="card">
+        <div class="topic">
           <h3>Self-Compassion</h3>
           <p>An emerging interest: how turning compassion inward relates to mindfulness and to caring for others.</p>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- ============ PUBLICATIONS ============ -->
-    <section id="publications">
-      <h2>Publications &amp; Presentations</h2>
+      <!-- ============ PUBLICATIONS ============ -->
+      <section id="publications">
+        <h2>Publications &amp; Presentations</h2>
 
-      <h3 class="sub">Manuscripts Under Review</h3>
-      <ul class="pubs">
-        <li><span class="me">Crawford, S. G.</span>, &amp; Berry, D. R. (submitted for review). Brief mindfulness instruction increases prosocial emotion arousal and decreases prosocial situation selection.</li>
-        <li>Lilley, K. M., Handy, J. L., Morfield, G., <span class="me">Crawford, S. G.</span>, Tasulis, V., &amp; Berry, D. R. (submitted). Adversity severity buffers prosocial situation selection decline. <em>Affective Science</em>.</li>
-      </ul>
+        <h3 class="sub">Manuscripts Under Review</h3>
+        <ul class="refs">
+          <li><span class="me">Crawford, S. G.</span>, &amp; Berry, D. R. (submitted for review). Brief mindfulness instruction increases prosocial emotion arousal and decreases prosocial situation selection.</li>
+          <li>Lilley, K. M., Handy, J. L., Morfield, G., <span class="me">Crawford, S. G.</span>, Tasulis, V., &amp; Berry, D. R. (submitted). Adversity severity buffers prosocial situation selection decline. <em>Affective Science</em>.</li>
+        </ul>
 
-      <h3 class="sub">Manuscripts in Preparation</h3>
-      <ul class="pubs">
-        <li>Kinsky, G. J., Lilley, K. M., Heusinger, N. E., <span class="me">Crawford, S. G.</span>, Behler, A. M. C., &amp; Berry, D. R. (in preparation). Is intergroup empathetic situation selection lower for social outgroups?</li>
-      </ul>
+        <h3 class="sub">Manuscripts in Preparation</h3>
+        <ul class="refs">
+          <li>Kinsky, G. J., Lilley, K. M., Heusinger, N. E., <span class="me">Crawford, S. G.</span>, Behler, A. M. C., &amp; Berry, D. R. (in preparation). Is intergroup empathetic situation selection lower for social outgroups?</li>
+        </ul>
 
-      <h3 class="sub">Theses</h3>
-      <ul class="pubs">
-        <li><span class="me">Crawford, S. G.</span> (2026). <em>The motivational costs of caring: How brief mindfulness practices influence compassion engagement and avoidance</em> [Honors thesis, Radford University]. Advisor: Dr. Daniel R. Berry.</li>
-      </ul>
+        <h3 class="sub">Theses</h3>
+        <ul class="refs">
+          <li><span class="me">Crawford, S. G.</span> (2026). <em>The motivational costs of caring: How brief mindfulness practices influence compassion engagement and avoidance</em> [Honors thesis, Radford University]. Advisor: Dr. Daniel R. Berry.</li>
+        </ul>
 
-      <h3 class="sub">Talks</h3>
-      <ul class="pubs">
-        <li><span class="me">Crawford, S. G.</span>, &amp; Berry, D. R. (2026, April). <em>The choice to care: Compassion motivation and avoidance following brief mindfulness practices</em> [Talk]. Honors Capstone Showcase, Radford, VA.</li>
-        <li><span class="me">Crawford, S. G.</span>, Handy, J., &amp; Berry, D. R. (2024, December). <em>How mindfulness impacts compassion regulation</em> [Talk]. 6th Annual Winter Creative Activities and Research Days, Radford, VA.</li>
-        <li><span class="me">Crawford, S. G.</span>, &amp; Berry, D. R. (2024, October). <em>Mindfulness and compassion regulation</em> [Flash talk]. 12th Annual Summer Research Celebration, Radford, VA.</li>
-        <li><span class="me">Crawford, S. G.</span>, &amp; Berry, D. R. (2024, April). <em>Does trait mindfulness predict prosocial emotional regulation?</em> [Flash talk]. Student Engagement Forum, Radford, VA.</li>
-      </ul>
+        <h3 class="sub">Talks</h3>
+        <ul class="refs">
+          <li><span class="me">Crawford, S. G.</span>, &amp; Berry, D. R. (2026, April). <em>The choice to care: Compassion motivation and avoidance following brief mindfulness practices</em> [Talk]. Honors Capstone Showcase, Radford, VA.</li>
+          <li><span class="me">Crawford, S. G.</span>, Handy, J., &amp; Berry, D. R. (2024, December). <em>How mindfulness impacts compassion regulation</em> [Talk]. 6th Annual Winter Creative Activities and Research Days, Radford, VA.</li>
+          <li><span class="me">Crawford, S. G.</span>, &amp; Berry, D. R. (2024, October). <em>Mindfulness and compassion regulation</em> [Flash talk]. 12th Annual Summer Research Celebration, Radford, VA.</li>
+          <li><span class="me">Crawford, S. G.</span>, &amp; Berry, D. R. (2024, April). <em>Does trait mindfulness predict prosocial emotional regulation?</em> [Flash talk]. Student Engagement Forum, Radford, VA.</li>
+        </ul>
 
-      <h3 class="sub">Invited Presentations</h3>
-      <ul class="pubs">
-        <li><span class="me">Crawford, S. G.</span>, Benz, H., &amp; Forti, M. (2026, March). <em>Compassion in action: Serving as a crisis intervention intern at the Women's Resource Center</em>. CHBS Advisory Board Meeting, Radford University.</li>
-        <li><span class="me">Crawford, S. G.</span>, &amp; Berry, D. R. (2024, October). <em>STARS funding</em>. CHBS Advisory Board Meeting, Radford University.</li>
-      </ul>
+        <h3 class="sub">Invited Presentations</h3>
+        <ul class="refs">
+          <li><span class="me">Crawford, S. G.</span>, Benz, H., &amp; Forti, M. (2026, March). <em>Compassion in action: Serving as a crisis intervention intern at the Women's Resource Center</em>. CHBS Advisory Board Meeting, Radford University.</li>
+          <li><span class="me">Crawford, S. G.</span>, &amp; Berry, D. R. (2024, October). <em>STARS funding</em>. CHBS Advisory Board Meeting, Radford University.</li>
+        </ul>
 
-      <h3 class="sub">Posters</h3>
-      <ul class="pubs">
-        <li><span class="me">Crawford, S. G.</span>, &amp; Berry, D. R. (2027, February). <em>To care or not to care: How brief mindfulness practices influence compassion engagement and avoidance</em> [Poster accepted]. Annual Convention of the Society for Personality and Social Psychology, Philadelphia, PA.</li>
-        <li><span class="me">Crawford, S. G.</span>, Benz, H., &amp; Forti, M. (2026, April). <em>From training to transformation: Growth through crisis hotline advocacy at the Women's Resource Center</em> [Poster]. Student Engagement Forum, Radford University, Radford, VA.</li>
-        <li><span class="me">Crawford, S. G.</span>, Benz, H., &amp; Forti, M. (2025, December). <em>Compassion in action: Serving as a crisis intervention intern at the Women's Resource Center</em> [Poster]. Winter Creative Activities and Research Days, Radford, VA.</li>
-        <li>Morris, E., Kinsky, G. J., Beach, N., <span class="me">Crawford, S. G.</span>, Behler, A. M. C., &amp; Berry, D. R. (2025, April). <em>How group affiliation affects empathic emotion regulation</em> [Poster]. Student Engagement Forum, Radford, VA.</li>
-        <li><span class="me">Crawford, S. G.</span>, Crawford, J. M., Gillette, E., Moreno, I. H., Brown, H. M., &amp; Barfield, S. (2025, April). <em>From trends to taste: An exploration of social media and its influence on eating habits among college students</em> [Poster]. Student Engagement Forum, Radford University, Radford, VA.</li>
-        <li><span class="me">Crawford, S. G.</span>, Showalter, S. E., &amp; Tan, T. K. (2025, April). <em>AI companions: Friend or foe?</em> [Poster]. Wicked Festival, Radford University, Radford, VA. <strong>Bronze Winner, Distinguished Research Award.</strong></li>
-        <li><span class="me">Crawford, S. G.</span>, Beach, N., &amp; Berry, D. R. (2025, April). <em>Does mindfulness predict prosocial emotion regulation?</em> [Poster]. 71st Annual Meeting of the Southeastern Psychological Association, Atlanta, GA.</li>
-        <li><span class="me">Crawford, S. G.</span>, Heusinger, N. E., Lilley, K. M., &amp; Berry, D. R. (2024, March). <em>How does trait mindfulness impact intergroup empathy selection and avoidance?</em> [Poster]. Annual Meeting of the Society for Affective Science, New Orleans, LA.</li>
-        <li>Heusinger, N. E., <span class="me">Crawford, S. G.</span>, Lilley, K. M., &amp; Berry, D. R. (2024, March). <em>Will people choose to avoid empathy in interracial contexts?</em> [Poster]. Annual Meeting of the Society for Affective Science, New Orleans, LA.</li>
-        <li>Lilley, K. M., <span class="me">Crawford, S. G.</span>, Heusinger, N. E., &amp; Berry, D. R. (2024, March). <em>Does prior experience with adversity close the intergroup empathy gap?</em> [Poster]. Annual Meeting of the Society for Affective Science, New Orleans, LA.</li>
-        <li>Lilley, K. M., Heusinger, N. E., <span class="me">Crawford, S. G.</span>, &amp; Berry, D. R. (2024, February). <em>Does severity of adversity predict selecting into empathetic situations?</em> [Poster]. Annual Convention of the Society for Personality and Social Psychology, San Diego, CA.</li>
-        <li><span class="me">Crawford, S. G.</span>, &amp; Berry, D. R. (2023, December). <em>Individual difference factors that reduce the intergroup &ldquo;empathy gap&rdquo;</em> [Poster]. Winter Creative Activities and Research Days, Radford, VA.</li>
-      </ul>
-    </section>
+        <h3 class="sub">Posters</h3>
+        <ul class="refs">
+          <li><span class="me">Crawford, S. G.</span>, &amp; Berry, D. R. (2027, February). <em>To care or not to care: How brief mindfulness practices influence compassion engagement and avoidance</em> [Poster accepted]. Annual Convention of the Society for Personality and Social Psychology, Philadelphia, PA.</li>
+          <li><span class="me">Crawford, S. G.</span>, Benz, H., &amp; Forti, M. (2026, April). <em>From training to transformation: Growth through crisis hotline advocacy at the Women's Resource Center</em> [Poster]. Student Engagement Forum, Radford University, Radford, VA.</li>
+          <li><span class="me">Crawford, S. G.</span>, Benz, H., &amp; Forti, M. (2025, December). <em>Compassion in action: Serving as a crisis intervention intern at the Women's Resource Center</em> [Poster]. Winter Creative Activities and Research Days, Radford, VA.</li>
+          <li>Morris, E., Kinsky, G. J., Beach, N., <span class="me">Crawford, S. G.</span>, Behler, A. M. C., &amp; Berry, D. R. (2025, April). <em>How group affiliation affects empathic emotion regulation</em> [Poster]. Student Engagement Forum, Radford, VA.</li>
+          <li><span class="me">Crawford, S. G.</span>, Crawford, J. M., Gillette, E., Moreno, I. H., Brown, H. M., &amp; Barfield, S. (2025, April). <em>From trends to taste: An exploration of social media and its influence on eating habits among college students</em> [Poster]. Student Engagement Forum, Radford University, Radford, VA.</li>
+          <li><span class="me">Crawford, S. G.</span>, Showalter, S. E., &amp; Tan, T. K. (2025, April). <em>AI companions: Friend or foe?</em> [Poster]. Wicked Festival, Radford University, Radford, VA. <span class="award">Bronze Winner, Distinguished Research Award.</span></li>
+          <li><span class="me">Crawford, S. G.</span>, Beach, N., &amp; Berry, D. R. (2025, April). <em>Does mindfulness predict prosocial emotion regulation?</em> [Poster]. 71st Annual Meeting of the Southeastern Psychological Association, Atlanta, GA.</li>
+          <li><span class="me">Crawford, S. G.</span>, Heusinger, N. E., Lilley, K. M., &amp; Berry, D. R. (2024, March). <em>How does trait mindfulness impact intergroup empathy selection and avoidance?</em> [Poster]. Annual Meeting of the Society for Affective Science, New Orleans, LA.</li>
+          <li>Heusinger, N. E., <span class="me">Crawford, S. G.</span>, Lilley, K. M., &amp; Berry, D. R. (2024, March). <em>Will people choose to avoid empathy in interracial contexts?</em> [Poster]. Annual Meeting of the Society for Affective Science, New Orleans, LA.</li>
+          <li>Lilley, K. M., <span class="me">Crawford, S. G.</span>, Heusinger, N. E., &amp; Berry, D. R. (2024, March). <em>Does prior experience with adversity close the intergroup empathy gap?</em> [Poster]. Annual Meeting of the Society for Affective Science, New Orleans, LA.</li>
+          <li>Lilley, K. M., Heusinger, N. E., <span class="me">Crawford, S. G.</span>, &amp; Berry, D. R. (2024, February). <em>Does severity of adversity predict selecting into empathetic situations?</em> [Poster]. Annual Convention of the Society for Personality and Social Psychology, San Diego, CA.</li>
+          <li><span class="me">Crawford, S. G.</span>, &amp; Berry, D. R. (2023, December). <em>Individual difference factors that reduce the intergroup &ldquo;empathy gap&rdquo;</em> [Poster]. Winter Creative Activities and Research Days, Radford, VA.</li>
+        </ul>
+      </section>
 
-    <!-- ============ TEACHING ============ -->
-    <section id="teaching">
-      <h2>Teaching</h2>
-      <ul class="pubs">
-        <li>
-          <span class="me">Graduate Teaching Assistant</span>, Fall 2026<br>
+      <!-- ============ TEACHING ============ -->
+      <section id="teaching">
+        <h2>Teaching</h2>
+        <div class="teach">
+          <strong>Graduate Teaching Assistant, Fall 2026</strong>
           PSYC 100: Introduction to Psychology (undergraduate lecture)<br>
           Department of Psychology, The Pennsylvania State University
-        </li>
-        <li>
-          <span class="me">Peer Instructor</span>, Fall 2025<br>
+        </div>
+        <div class="teach">
+          <strong>Peer Instructor, Fall 2025</strong>
           UNIV 100: Introduction to Higher Education (undergraduate lecture)<br>
           Highlander Success Center, Radford University
-        </li>
-      </ul>
-    </section>    <!-- ============ CV & CONTACT ============ -->
-    <section id="contact">
-      <h2>CV &amp; Contact</h2>
-      <p>
-        My full CV is available <a href="cv.pdf" target="_blank" rel="noopener">here (PDF)</a>.
-        I'm always happy to talk about compassion, mindfulness, and research collaborations.
-      </p>
-      <div class="contact-grid">
-        <div>
-          <p class="label">Email</p>
-          <p><a href="mailto:sgc5489@psu.edu">sgc5489@psu.edu</a></p>
         </div>
-        <div>
-          <p class="label">Department</p>
-          <p>Department of Psychology<br>The Pennsylvania State University<br>University Park, PA</p>
-        </div>
-      </div>
-    </section>
+      </section>
 
-  </main>
+    </main>
+  </div>
 
-  <footer>
-    © 2026 Sophia Crawford
-  </footer>
+  <footer>© 2026 Sophia Crawford</footer>
 
 </body>
 </html>
